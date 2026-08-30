@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphics Design — Orynza</title>
+<meta name="description" content="Custom website banners, blog graphics, and social visuals with a consistent brand style — fixed pricing, fast delivery.">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="brand-mark">O</span>Orynza</a>
+    <nav class="nav-links">
+      <a href="website-design.html" class="navlink">Website Design</a>
+      <a href="graphics-design.html" class="navlink active">Graphics Design</a>
+      <a href="cv-design.html" class="navlink">CV Design</a>
+      <a href="courses.html" class="navlink">Courses</a>
+      <a href="about.html" class="navlink">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Graphics Design</span>
+    <h1>Custom visuals that keep your website and socials looking consistent.</h1>
+    <p>Website banners, blog graphics, promotional visuals, and social media posts — designed to match your brand. Pick the pack size that fits your project.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="steps">
+      <div class="step"><h4>Brief</h4><p>Tell us what graphics you need and share any brand colors or references.</p></div>
+      <div class="step"><h4>Design</h4><p>We create your custom graphics.</p></div>
+      <div class="step"><h4>Revisions</h4><p>Review and request changes within your tier's limit.</p></div>
+      <div class="step"><h4>Delivery</h4><p>Receive final files in JPG/PNG, plus source files on Standard and Premium.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="grid-3">
+
+      <div class="price-card">
+        <span class="price-tier-name">Basic</span>
+        <h3>1 Website Graphic</h3>
+        <div class="price-amount">$10</div>
+        <div class="price-meta">Delivery: 2 days · 1 revision</div>
+        <ul class="price-features">
+          <li>Custom design</li>
+          <li>Delivered as JPG or PNG</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="orynzaCheckout('graphicsBasic10')">Get Started</button>
+      </div>
+
+      <div class="price-card featured">
+        <span class="price-badge">Most Popular</span>
+        <span class="price-tier-name">Standard</span>
+        <h3>Website Graphics Set</h3>
+        <div class="price-amount">$50</div>
+        <div class="price-meta">Delivery: 4 days · 3 revisions</div>
+        <ul class="price-features">
+          <li>4 custom graphics</li>
+          <li>Consistent style across the set</li>
+          <li>Source file included</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="orynzaCheckout('graphicsStandard50')">Get Started</button>
+      </div>
+
+      <div class="price-card">
+        <span class="price-tier-name">Premium</span>
+        <h3>Complete Visual Pack</h3>
+        <div class="price-amount">$80</div>
+        <div class="price-meta">Delivery: 6 days · 5 revisions</div>
+        <ul class="price-features">
+          <li>8 custom graphics</li>
+          <li>Full brand consistency</li>
+          <li>Source files included</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="orynzaCheckout('graphicsPremium80')">Get Started</button>
+      </div>
+
+    </div>
+    <p style="text-align:center;margin-top:32px;">Need a bigger set or something else entirely? <a href="contact.html" style="color:var(--coral-dark);font-weight:600;">Request a custom quote →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">Graphics design questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What kind of graphics can I order?</summary>
+        <p>Website banners, hero visuals, blog featured images, social media posts, and promotional graphics — anything that fits a custom-image format.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I get the source files?</summary>
+        <p>Standard and Premium packages include source files. The Basic package delivers a flattened JPG or PNG only.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can graphics match my existing brand colors?</summary>
+        <p>Yes — share your brand colors, fonts, or references in your brief and we'll design to match.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="brand"><span class="brand-mark">O</span>Orynza</a>
+        <p>Orynza is the operating brand of Orynza Global LLC, a New Mexico limited liability company. We design websites, graphics, and CVs — and build practical guides to help you grow.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="website-design.html">Website Design</a>
+        <a href="graphics-design.html">Graphics Design</a>
+        <a href="cv-design.html">CV Design</a>
+        <a href="courses.html">Courses</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="refund.html">Refund Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Orynza Global LLC. All rights reserved.</span>
+      <span>Albuquerque, New Mexico</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/checkout.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

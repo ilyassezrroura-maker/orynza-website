@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Orynza</title>
+<meta name="description" content="Get a free quote from Orynza for website design, graphics design, CV design, or courses.">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="brand-mark">O</span>Orynza</a>
+    <nav class="nav-links">
+      <a href="website-design.html" class="navlink">Website Design</a>
+      <a href="graphics-design.html" class="navlink">Graphics Design</a>
+      <a href="cv-design.html" class="navlink">CV Design</a>
+      <a href="courses.html" class="navlink">Courses</a>
+      <a href="about.html" class="navlink">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h1>Let's talk about your project.</h1>
+    <p>Fill out the form and we'll get back to you within 1–2 business days.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <div>
+      <div id="form-note" class="form-note">Online checkout for this package is launching soon — send your details below and we'll get you set up directly.</div>
+
+      <form id="contact-form" action="https://formspree.io/f/REPLACE_ME" method="POST">
+        <input type="hidden" name="_subject" value="New Orynza inquiry">
+        <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
+
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="service-select">Service</label>
+          <select id="service-select" name="service">
+            <option value="web">Website Design</option>
+            <option value="graphics">Graphics Design</option>
+            <option value="cv">CV Design</option>
+            <option value="course">Courses</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" required placeholder="Tell us what you need, your timeline, and any references."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        <div id="form-success" class="form-success">Thanks — your message has been sent. We'll be in touch within 1–2 business days.</div>
+      </form>
+    </div>
+
+    <aside>
+      <div class="card">
+        <h3>What to expect</h3>
+        <p>We aim to reply within 1–2 business days with next steps or a few clarifying questions.</p>
+        <p style="margin-bottom:0;">For pricing details before you reach out, check the <a href="website-design.html" style="color:var(--coral-dark);font-weight:600;">Website Design</a>, <a href="graphics-design.html" style="color:var(--coral-dark);font-weight:600;">Graphics Design</a>, <a href="cv-design.html" style="color:var(--coral-dark);font-weight:600;">CV Design</a>, or <a href="courses.html" style="color:var(--coral-dark);font-weight:600;">Courses</a> pages.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="brand"><span class="brand-mark">O</span>Orynza</a>
+        <p>Orynza is the operating brand of Orynza Global LLC, a New Mexico limited liability company. We design websites, graphics, and CVs — and build practical guides to help you grow.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="website-design.html">Website Design</a>
+        <a href="graphics-design.html">Graphics Design</a>
+        <a href="cv-design.html">CV Design</a>
+        <a href="courses.html">Courses</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="refund.html">Refund Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Orynza Global LLC. All rights reserved.</span>
+      <span>Albuquerque, New Mexico</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/checkout.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
