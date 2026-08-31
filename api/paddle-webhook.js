@@ -15,6 +15,40 @@ export const config = { api: { bodyParser: false } };
 
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "support@orynzaglobal.shop";
 
+// Paddle's published webhook source IPs. Fetched live rather than hard-coded
+// since Paddle can rotate these — cached in memory for an hour per warm
+// function instance to avoid a fetch on every request.
+let cachedPaddleIps = null;
+let cachedAt = 0;
+const IP_CACHE_MS = 60 * 60 * 1000;
+
+async function getPaddleIps() {
+  const now = Date.now();
+  if (cachedPaddleIps && now - cachedAt < IP_CACHE_MS) return cachedPaddleIps;
+  try {
+    const res = await fetch("https://api.paddle.com/ips");
+    const json = await res.json();
+    // Every entry is published as a /32 CIDR (a single address), so a plain
+    // string match on the address is equivalent to real CIDR matching here.
+    cachedPaddleIps = (json.data && json.data.ipv4_cidrs ? json.data.ipv4_cidrs : []).map(
+      (cidr) => cidr.split("/")[0]
+    );
+    cachedAt = now;
+  } catch {
+    // Fetch failed (transient network issue) — fail OPEN on the IP check.
+    // Signature verification is the real cryptographic gate; the IP
+    // allowlist is defense-in-depth on top of it, not a replacement for it.
+    return null;
+  }
+  return cachedPaddleIps;
+}
+
+function getClientIp(req) {
+  const fwd = req.headers["x-forwarded-for"];
+  if (fwd) return fwd.split(",")[0].trim();
+  return req.socket && req.socket.remoteAddress;
+}
+
 function getRawBody(req) {
   return new Promise((resolve, reject) => {
     var chunks = [];
@@ -80,6 +114,15 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.status(405).send("Method not allowed");
     return;
+  }
+
+  const allowedIps = await getPaddleIps();
+  if (allowedIps && allowedIps.length) {
+    const clientIp = getClientIp(req);
+    if (!clientIp || !allowedIps.includes(clientIp)) {
+      res.status(403).send("Forbidden");
+      return;
+    }
   }
 
   const rawBody = await getRawBody(req);
