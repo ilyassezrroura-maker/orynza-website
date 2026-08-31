@@ -37,7 +37,14 @@
 
     loadPaddleScript(function () {
       initPaddle();
-      Paddle.Checkout.open({ items: [{ priceId: priceId, quantity: 1 }] });
+      Paddle.Checkout.open({
+        items: [{ priceId: priceId, quantity: 1 }],
+        settings: {
+          displayMode: "overlay",
+          variant: "one-page",
+          successUrl: window.location.origin + "/thank-you.html"
+        }
+      });
     });
   }
 
