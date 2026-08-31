@@ -1,0 +1,8 @@
+{
+  "name": "orynza-website",
+  "private": true,
+  "description": "Static site with a single Vercel serverless function (api/paddle-webhook.js) for Paddle order notifications.",
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
