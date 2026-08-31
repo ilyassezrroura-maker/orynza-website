@@ -9,7 +9,7 @@ window.ORYNZA_CONFIG = {
   PADDLE_ENV: "sandbox",
 
   // Paddle Dashboard (sandbox) > Developer Tools > Authentication > Client-side token.
-  PADDLE_CLIENT_TOKEN: "REPLACE_WITH_PADDLE_SANDBOX_CLIENT_TOKEN",
+  PADDLE_CLIENT_TOKEN: "test_4d228a417f40461f7b568bf9be1",
 
   // Where a Buy button sends people if a price id is ever missing.
   FALLBACK_URL: "contact.html?intent=quote",
