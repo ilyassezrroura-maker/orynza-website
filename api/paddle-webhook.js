@@ -11,7 +11,18 @@
 
 import crypto from "node:crypto";
 
+export const config = { api: { bodyParser: false } };
+
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "support@orynzaglobal.shop";
+
+function getRawBody(req) {
+  return new Promise((resolve, reject) => {
+    var chunks = [];
+    req.on("data", function (c) { chunks.push(c); });
+    req.on("end", function () { resolve(Buffer.concat(chunks).toString("utf8")); });
+    req.on("error", reject);
+  });
+}
 
 function verifyPaddleSignature(rawBody, signatureHeader, secret) {
   if (!signatureHeader || !secret) return false;
@@ -65,26 +76,29 @@ async function sendOrderNotification(transaction) {
   });
 }
 
-export default async function handler(request) {
-  if (request.method !== "POST") {
-    return new Response("Method not allowed", { status: 405 });
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    res.status(405).send("Method not allowed");
+    return;
   }
 
-  const rawBody = await request.text();
-  const signatureHeader = request.headers.get("paddle-signature");
+  const rawBody = await getRawBody(req);
+  const signatureHeader = req.headers["paddle-signature"];
   const secret = process.env.PADDLE_WEBHOOK_SECRET;
 
   if (!verifyPaddleSignature(rawBody, signatureHeader, secret)) {
     // Do NOT return 2xx on a failed/unverified signature — a 2xx tells
     // Paddle delivery succeeded and stops retries.
-    return new Response("Invalid signature", { status: 401 });
+    res.status(401).send("Invalid signature");
+    return;
   }
 
   let event;
   try {
     event = JSON.parse(rawBody);
   } catch {
-    return new Response("Invalid JSON", { status: 400 });
+    res.status(400).send("Invalid JSON");
+    return;
   }
 
   switch (event.event_type) {
@@ -97,5 +111,5 @@ export default async function handler(request) {
       break;
   }
 
-  return new Response("OK", { status: 200 });
+  res.status(200).send("OK");
 }
