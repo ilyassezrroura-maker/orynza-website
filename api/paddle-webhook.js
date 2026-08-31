@@ -6,12 +6,10 @@
 //
 // Required env vars (set in Vercel, never in this repo):
 //   PADDLE_WEBHOOK_SECRET  - signing secret from the notification destination
-//   ZOHO_SMTP_PASSWORD     - Zoho Mail app-specific password (Security > App Passwords),
-//                            NOT the regular account password
+//   RESEND_API_KEY         - server-side only, sends the notification email
 //   NOTIFY_EMAIL           - where the order notification is sent (defaults below)
 
 import crypto from "node:crypto";
-import nodemailer from "nodemailer";
 
 export const config = { api: { bodyParser: false } };
 
@@ -51,33 +49,30 @@ function verifyPaddleSignature(rawBody, signatureHeader, secret) {
 }
 
 async function sendOrderNotification(transaction) {
-  if (!process.env.ZOHO_SMTP_PASSWORD) return; // no email configured yet — skip silently
+  if (!process.env.RESEND_API_KEY) return; // no email configured yet — skip silently
 
   const item = (transaction.items && transaction.items[0]) || {};
   const total = transaction.details && transaction.details.totals ? transaction.details.totals.total : "?";
   const currency = transaction.currency_code || "";
 
-  const transporter = nodemailer.createTransport({
-    host: "smtp.zoho.eu",
-    port: 465,
-    secure: true,
-    auth: {
-      user: "support@orynzaglobal.shop",
-      pass: process.env.ZOHO_SMTP_PASSWORD
-    }
-  });
-
-  await transporter.sendMail({
-    from: "Orynza Orders <support@orynzaglobal.shop>",
-    to: NOTIFY_EMAIL,
-    subject: `New Orynza order — ${transaction.id}`,
-    text:
-      `New Paddle order received.\n\n` +
-      `Transaction ID: ${transaction.id}\n` +
-      `Customer ID: ${transaction.customer_id}\n` +
-      `Price ID: ${item.price_id || "unknown"}\n` +
-      `Total: ${total} ${currency}\n\n` +
-      `Full details in the Paddle dashboard.`
+  await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      from: "Orynza Orders <orders@orynzaglobal.shop>",
+      to: NOTIFY_EMAIL,
+      subject: `New Orynza order — ${transaction.id}`,
+      text:
+        `New Paddle order received.\n\n` +
+        `Transaction ID: ${transaction.id}\n` +
+        `Customer ID: ${transaction.customer_id}\n` +
+        `Price ID: ${item.price_id || "unknown"}\n` +
+        `Total: ${total} ${currency}\n\n` +
+        `Full details in the Paddle dashboard.`
+    })
   });
 }
 
