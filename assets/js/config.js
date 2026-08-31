@@ -1,32 +1,33 @@
 // Orynza — single source of truth for checkout + form config.
 // Edit this file once you have real Paddle and Formspree credentials.
 window.ORYNZA_CONFIG = {
-  // Flip to true only after Paddle has approved the merchant account.
-  PADDLE_ENABLED: false,
+  // true = Buy buttons open real Paddle checkout (sandbox or production, per PADDLE_ENV below).
+  PADDLE_ENABLED: true,
 
-  // "sandbox" while testing each price in Paddle's sandbox, "production" at launch.
+  // "sandbox" while testing — switch to "production" only once the live account is approved
+  // and PRICES/PADDLE_CLIENT_TOKEN below are replaced with real live values.
   PADDLE_ENV: "sandbox",
 
-  // Paddle Dashboard > Developer Tools > Authentication > Client-side token.
-  PADDLE_CLIENT_TOKEN: "REPLACE_WITH_PADDLE_CLIENT_TOKEN",
+  // Paddle Dashboard (sandbox) > Developer Tools > Authentication > Client-side token.
+  PADDLE_CLIENT_TOKEN: "REPLACE_WITH_PADDLE_SANDBOX_CLIENT_TOKEN",
 
-  // Where a Buy button sends people while Paddle isn't live yet, or a price id is missing.
+  // Where a Buy button sends people if a price id is ever missing.
   FALLBACK_URL: "contact.html?intent=quote",
 
-  // One Paddle Price ID per package/course. Create these in the Paddle dashboard
-  // after approval, then paste the real "pri_..." ids in below.
+  // Sandbox Price IDs (created via Paddle API). Swap these for live "pri_..." ids
+  // from the Paddle live dashboard once the merchant account is approved.
   PRICES: {
-    webBasic80: "pri_REPLACE_ME",
-    webStandard200: "pri_REPLACE_ME",
-    webPremium500: "pri_REPLACE_ME",
+    webBasic80: "pri_01m1cb20qvtsr31x6pexbr731t",
+    webStandard200: "pri_01m1cb2efn92a6favm0knxqzbq",
+    webPremium500: "pri_01m1cb2fvqq4c1wtqvdpannn7w",
 
-    graphicsBasic10: "pri_REPLACE_ME",
-    graphicsStandard50: "pri_REPLACE_ME",
-    graphicsPremium80: "pri_REPLACE_ME",
+    graphicsBasic10: "pri_01m1cb2h789qx3j0jcc7e52maj",
+    graphicsStandard50: "pri_01m1cb2jg5gnxwhdfk6sghghd7",
+    graphicsPremium80: "pri_01m1cb2m58c1nn7k9jaz9y24dg",
 
-    cvDesign30: "pri_REPLACE_ME",
+    cvDesign30: "pri_01m1cb2nk7cnz4gfmmy4mhw5fp",
 
-    courseInstagram29: "pri_REPLACE_ME"
+    courseInstagram29: "pri_01m1cb2q8z2ggd707659n6cxdq"
   },
 
   // Formspree form endpoint, e.g. "https://formspree.io/f/abcdwxyz".

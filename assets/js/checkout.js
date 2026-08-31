@@ -21,10 +21,13 @@
 
   function openCheckout(priceKey) {
     var priceId = ORYNZA_CONFIG.PRICES[priceKey];
+    var token = ORYNZA_CONFIG.PADDLE_CLIENT_TOKEN;
     var notReady =
       !ORYNZA_CONFIG.PADDLE_ENABLED ||
       !priceId ||
-      priceId.indexOf("REPLACE") !== -1;
+      priceId.indexOf("REPLACE") !== -1 ||
+      !token ||
+      token.indexOf("REPLACE") !== -1;
 
     if (notReady) {
       window.location.href =
