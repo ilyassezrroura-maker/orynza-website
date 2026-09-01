@@ -42,7 +42,7 @@
         settings: {
           displayMode: "overlay",
           variant: "one-page",
-          successUrl: window.location.origin + "/thank-you.html"
+          successUrl: window.location.origin + "/thank-you"
         }
       });
     });

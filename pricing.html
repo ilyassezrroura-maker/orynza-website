@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Orynza</title>
+<meta name="description" content="All Orynza pricing in one place: website design, graphics design, CV design, and digital guides. Fixed prices, no subscriptions.">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a href="/" class="brand"><span class="brand-mark">O</span>Orynza</a>
+    <nav class="nav-links">
+      <a href="/pricing" class="navlink active">Pricing</a>
+      <a href="/website-design" class="navlink">Website Design</a>
+      <a href="/graphics-design" class="navlink">Graphics Design</a>
+      <a href="/cv-design" class="navlink">CV Design</a>
+      <a href="/courses" class="navlink">Courses</a>
+      <a href="/about" class="navlink">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="/contact" class="btn btn-primary btn-sm">Get a Quote</a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Pricing</span>
+    <h1>Every price, in one place.</h1>
+    <p>Fixed prices, no subscriptions, no hidden fees. Every package states exactly what's included and how long delivery takes. Checkout is handled by Paddle.com, our Merchant of Record.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Website Design</span>
+      <h2 class="section-title">Website Design</h2>
+      <p class="section-sub">From a single landing page to a fully custom multi-page site with an admin panel.</p>
+    </div>
+    <div class="grid-3">
+      <div class="price-card">
+        <span class="price-tier-name">Basic</span>
+        <h3>Simple Landing Page</h3>
+        <div class="price-amount" data-price-key="webBasic80">$80</div>
+        <div class="price-meta">Delivery: 3 days · 2 revisions</div>
+        <ul class="price-features">
+          <li>1 responsive page</li>
+          <li>Contact form</li>
+          <li>Basic SEO setup</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="orynzaCheckout('webBasic80')">Get Started</button>
+      </div>
+      <div class="price-card featured">
+        <span class="price-badge">Most Popular</span>
+        <span class="price-tier-name">Standard</span>
+        <h3>Multi-Page Business Website</h3>
+        <div class="price-amount" data-price-key="webStandard200">$200</div>
+        <div class="price-meta">Delivery: 6 days · 4 revisions</div>
+        <ul class="price-features">
+          <li>Up to 5 pages</li>
+          <li>Email contact form</li>
+          <li>SEO optimization</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="orynzaCheckout('webStandard200')">Get Started</button>
+      </div>
+      <div class="price-card">
+        <span class="price-tier-name">Premium</span>
+        <h3>Full Custom Website</h3>
+        <div class="price-amount" data-price-key="webPremium500">$500</div>
+        <div class="price-meta">Delivery: 12 days · Unlimited revisions (14-day window)</div>
+        <ul class="price-features">
+          <li>Up to 10 pages</li>
+          <li>Admin panel, auth &amp; payments</li>
+          <li>Full SEO &amp; deployment assistance</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="orynzaCheckout('webPremium500')">Get Started</button>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:16px;"><a href="/website-design" style="color:var(--coral-dark);font-weight:600;">Full details on Website Design →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Graphics Design</span>
+      <h2 class="section-title">Graphics Design</h2>
+      <p class="section-sub">Custom website banners, blog graphics, and social visuals with a consistent brand style.</p>
+    </div>
+    <div class="grid-3">
+      <div class="price-card">
+        <span class="price-tier-name">Basic</span>
+        <h3>1 Website Graphic</h3>
+        <div class="price-amount" data-price-key="graphicsBasic10">$10</div>
+        <div class="price-meta">Delivery: 2 days · 1 revision</div>
+        <ul class="price-features">
+          <li>Custom design</li>
+          <li>JPG or PNG</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="orynzaCheckout('graphicsBasic10')">Get Started</button>
+      </div>
+      <div class="price-card featured">
+        <span class="price-badge">Most Popular</span>
+        <span class="price-tier-name">Standard</span>
+        <h3>Website Graphics Set</h3>
+        <div class="price-amount" data-price-key="graphicsStandard50">$50</div>
+        <div class="price-meta">Delivery: 4 days · 3 revisions</div>
+        <ul class="price-features">
+          <li>4 custom graphics</li>
+          <li>Consistent style</li>
+          <li>Source file included</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="orynzaCheckout('graphicsStandard50')">Get Started</button>
+      </div>
+      <div class="price-card">
+        <span class="price-tier-name">Premium</span>
+        <h3>Complete Visual Pack</h3>
+        <div class="price-amount" data-price-key="graphicsPremium80">$80</div>
+        <div class="price-meta">Delivery: 6 days · 5 revisions</div>
+        <ul class="price-features">
+          <li>8 custom graphics</li>
+          <li>Full brand consistency</li>
+          <li>Source files included</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="orynzaCheckout('graphicsPremium80')">Get Started</button>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:16px;"><a href="/graphics-design" style="color:var(--coral-dark);font-weight:600;">Full details on Graphics Design →</a></p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">CV Design</span>
+      <h2 class="section-title">CV Design</h2>
+    </div>
+    <div style="max-width:480px;margin:0 auto;">
+      <div class="price-card featured">
+        <span class="price-tier-name">CV Design</span>
+        <h3>Professional CV, One Flat Price</h3>
+        <div class="price-amount" data-price-key="cvDesign30">$30</div>
+        <div class="price-meta">Clear delivery window, confirmed when you submit your brief</div>
+        <ul class="price-features">
+          <li>ATS-friendly formatting</li>
+          <li>Tailored content structuring</li>
+          <li>PDF + editable source file delivery</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="orynzaCheckout('cvDesign30')">Get Started — $30</button>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:16px;"><a href="/cv-design" style="color:var(--coral-dark);font-weight:600;">Full details on CV Design →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Courses</span>
+      <h2 class="section-title">Digital Guides</h2>
+      <p class="section-sub">Short, focused written guides — no fluff, no filler modules.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <span class="badge badge-live" style="margin-bottom:14px;display:inline-block;">PDF Guide · Self-Paced</span>
+        <h3>How to Grow Your Instagram Account</h3>
+        <p>Profile setup and positioning, content strategy, growth tactics, and a posting-consistency checklist.</p>
+        <div style="margin-top:18px;display:flex;align-items:center;justify-content:space-between;">
+          <span class="price-amount" style="font-size:1.4rem;" data-price-key="courseInstagram29">$29</span>
+          <button class="btn btn-primary btn-sm" onclick="orynzaCheckout('courseInstagram29')">Get the Guide</button>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:16px;"><a href="/courses" style="color:var(--coral-dark);font-weight:600;">Full details on Courses →</a></p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Need something that doesn't fit these packages?</h2>
+      <p>Tell us what you're after — we'll get back to you within 1–2 business days.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="/contact" class="btn btn-secondary">Request a Custom Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="/" class="brand"><span class="brand-mark">O</span>Orynza</a>
+        <p>Orynza is the operating brand of Orynza Global LLC, a New Mexico limited liability company. We design websites, graphics, and CVs — and build practical guides to help you grow.</p>
+        <p style="margin-top:16px;"><a href="mailto:support@orynzaglobal.shop">support@orynzaglobal.shop</a><a href="tel:+15055424447">(505) 542-4447</a></p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="/website-design">Website Design</a>
+        <a href="/graphics-design">Graphics Design</a>
+        <a href="/cv-design">CV Design</a>
+        <a href="/courses">Courses</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="/terms">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/refund">Refund Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Orynza Global LLC. All rights reserved.</span>
+      <span>Albuquerque, New Mexico</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/pricing.js"></script>
+<script src="assets/js/checkout.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

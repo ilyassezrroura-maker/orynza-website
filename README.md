@@ -9,15 +9,15 @@ and digital courses/guides.
 | File | Purpose |
 |---|---|
 | `index.html` | Home |
-| `website-design.html` | Website Design service — $80 / $200 / $500 tiers |
-| `graphics-design.html` | Website Graphics Design service — $10 / $50 / $80 tiers |
-| `cv-design.html` | CV Design service — $30 flat |
-| `courses.html` | Course catalog — "How to Grow Your Instagram Account" ($29 PDF guide) |
-| `about.html` | About Orynza / Orynza Global LLC |
-| `contact.html` | Contact / quote request form (Formspree) |
-| `terms.html` | Terms of Service |
-| `privacy.html` | Privacy Policy |
-| `refund.html` | Refund Policy |
+| `/website-design` | Website Design service — $80 / $200 / $500 tiers |
+| `/graphics-design` | Website Graphics Design service — $10 / $50 / $80 tiers |
+| `/cv-design` | CV Design service — $30 flat |
+| `/courses` | Course catalog — "How to Grow Your Instagram Account" ($29 PDF guide) |
+| `/about` | About Orynza / Orynza Global LLC |
+| `/contact` | Contact / quote request form (Formspree) |
+| `/terms` | Terms of Service |
+| `/privacy` | Privacy Policy |
+| `/refund` | Refund Policy |
 
 Shared styling lives in `styles.css`. Shared behavior lives in `assets/js/`:
 - `config.js` — single source of truth for Paddle + Formspree credentials
@@ -45,7 +45,7 @@ Then open the printed local URL in a browser.
 - [ ] Apply for a Paddle merchant account using this live site (Paddle requires clear pricing + Terms/Privacy/Refund pages before approving — all included here).
 - [ ] Once approved, create one Paddle Product/Price per package (8 total: 3 website tiers, 3 graphics tiers, CV design, the Instagram course) and copy each `pri_...` id into `assets/js/config.js`.
 - [ ] Paste your Paddle client-side token into `config.js`, flip `PADDLE_ENABLED: true`, and set `PADDLE_ENV: "production"` after testing each checkout in sandbox.
-- [ ] Create a free [Formspree](https://formspree.io) account, create one form, and replace `REPLACE_ME` in `config.js` and in the `action` attribute of the form in `contact.html`.
-- [ ] Fill in the `[bracketed placeholders]` in `terms.html`, `privacy.html`, and `refund.html` (dates, exact refund windows).
-- [ ] Have `terms.html`, `privacy.html`, and `refund.html` reviewed by an attorney before publishing.
+- [ ] Create a free [Formspree](https://formspree.io) account, create one form, and replace `REPLACE_ME` in `config.js` and in the `action` attribute of the form in `/contact`.
+- [ ] Fill in the `[bracketed placeholders]` in `/terms`, `/privacy`, and `/refund` (dates, exact refund windows).
+- [ ] Have `/terms`, `/privacy`, and `/refund` reviewed by an attorney before publishing.
 - [ ] Double-check the CV Design delivery timeline (currently described generically — add a specific number of days once decided).
