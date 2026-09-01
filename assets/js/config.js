@@ -12,7 +12,7 @@ window.ORYNZA_CONFIG = {
   PADDLE_CLIENT_TOKEN: "test_4d228a417f40461f7b568bf9be1",
 
   // Where a Buy button sends people if a price id is ever missing.
-  FALLBACK_URL: "contact.html?intent=quote",
+  FALLBACK_URL: "/contact?intent=quote",
 
   // Sandbox Price IDs (created via Paddle API). Swap these for live "pri_..." ids
   // from the Paddle live dashboard once the merchant account is approved.
